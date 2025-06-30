@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  FinalCutPlugins
+//  Final Cut Plugins
 //
 //  Created by Jade Lapuz on 7/1/25.
 //
@@ -22,23 +22,18 @@ struct ContentView<T: MainViewViewModelProtocol>: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
-                    }
+                ForEach(viewModel.plugins) { plugin in
+                    PluginCardView(plugin: plugin)
+                        .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
+                        .listRowSeparator(.hidden)
                 }
                 .onDelete(perform: deleteItems)
             }
-            .toolbar {
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-            Text("Select an item")
+            .listStyle(PlainListStyle())
+            .navigationTitle("Final Cut Plugins")
+            .loading(viewModel.isLoading, message: "Loading plugins...")
+            
+            Text("Select a plugin")
         }
         .task {
             viewModel.fetchData(page: 1)

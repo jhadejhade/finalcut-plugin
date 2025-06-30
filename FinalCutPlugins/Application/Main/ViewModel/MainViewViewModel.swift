@@ -13,11 +13,13 @@ protocol Paginateable: ObservableObject {
 
 protocol MainViewViewModelProtocol: Paginateable {
     var plugins: [PluginUIModel] { get }
+    var isLoading: Bool { get }
 }
 
 class MainViewViewModel: MainViewViewModelProtocol {
 
     @Published private(set) var plugins: [PluginUIModel] = []
+    @Published private(set) var isLoading: Bool = false
     
     private var pluginService: ContentLoadable
     
@@ -26,10 +28,20 @@ class MainViewViewModel: MainViewViewModelProtocol {
     }
     
     func fetchData(page: Int) {
+        isLoading = true
         Task {
-            let result: [PluginAPIModel] = try await pluginService.fetchData(page: page)
-            
-            self.plugins = result.map { PluginUIModel(pluginAPIModel: $0) }
+            do {
+                let result: [PluginAPIModel] = try await pluginService.fetchData(page: page)
+                
+                await MainActor.run {
+                    isLoading = false
+                    self.plugins = result.map { PluginUIModel(pluginAPIModel: $0) }
+                    
+                }
+            } catch {
+                isLoading = false
+                print("Error fetching data: \(error)")
+            }
         }
     }
 }

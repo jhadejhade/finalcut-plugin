@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PluginUIModel {
+struct PluginUIModel: Identifiable {
     let id: String
     let name: String
     let developer: String
@@ -24,5 +24,19 @@ struct PluginUIModel {
         self.description = pluginAPIModel.description
         self.downloadUrl = pluginAPIModel.downloadUrl
         self.imageUrl = pluginAPIModel.imageUrl
+    }
+    
+    static var mock: PluginUIModel {
+        PluginUIModel(
+            pluginAPIModel: PluginAPIModel(
+                id: "mock-plugin-1",
+                name: "Color Corrector Pro",
+                developer: "FinalCut Studios",
+                version: "2.1.0",
+                description: "Professional color correction and grading plugin with advanced tools for cinematic looks.",
+                downloadUrl: URL(string: "https://example.com/download/color-corrector-pro")!,
+                imageUrl: URL(string: "https://example.com/images/color-corrector-pro.png")!
+            )
+        )
     }
 }

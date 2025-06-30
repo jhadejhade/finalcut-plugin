@@ -1,0 +1,156 @@
+//
+//  PluginCardView.swift
+//  FinalCutPlugins
+//
+//  Created by Jade Lapuz on 7/1/25.
+//
+
+import SwiftUI
+
+struct PluginCardView: View {
+    let plugin: PluginUIModel
+    var isNew: Bool = true
+
+    @State private var isDownloading = false
+
+    var body: some View {
+        HStack(spacing: 16) {
+            // Plugin Image with Overlay
+            ZStack(alignment: .bottomTrailing) {
+                AsyncImage(url: plugin.imageUrl) { image in
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                } placeholder: {
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(Color.gray.opacity(0.2))
+                        .overlay(ShimmerView())
+                }
+                .frame(width: 80, height: 80)
+                .clipShape(RoundedRectangle(cornerRadius: 12))
+
+                Image(systemName: "puzzlepiece.extension")
+                    .padding(6)
+                    .background(Color.white.opacity(0.8))
+                    .clipShape(Circle())
+                    .offset(x: -4, y: -4)
+            }
+
+            // Plugin Info
+            VStack(alignment: .leading, spacing: 10) {
+                HStack(alignment: .top) {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(plugin.name)
+                            .font(.headline)
+                            .fontWeight(.bold)
+                            .foregroundColor(.primary)
+                            .lineLimit(1)
+
+                        HStack(spacing: 4) {
+                            Image(systemName: "person.fill")
+                                .foregroundColor(.gray)
+                            Text(plugin.developer)
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+                        }
+                    }
+
+                    Spacer()
+
+                    VStack(alignment: .trailing, spacing: 6) {
+                        Text("v\(plugin.version)")
+                            .font(.caption)
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 4)
+                            .background(Color.blue.opacity(0.1))
+                            .foregroundColor(.blue)
+                            .clipShape(Capsule())
+
+                        if isNew {
+                            Text("New")
+                                .font(.caption2)
+                                .fontWeight(.bold)
+                                .padding(4)
+                                .background(Color.green.opacity(0.2))
+                                .foregroundColor(.green)
+                                .clipShape(Capsule())
+                        }
+                    }
+                }
+
+                Text(plugin.description)
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+                    .lineLimit(2)
+
+                HStack {
+                    Spacer()
+
+                    Button(action: {
+                        isDownloading = true
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                            isDownloading = false
+                        }
+                    }) {
+                        HStack(spacing: 6) {
+                            Image(systemName: isDownloading ? "arrow.down.circle" : "arrow.down.circle.fill")
+                                .rotationEffect(.degrees(isDownloading ? 360 : 0))
+                                .animation(isDownloading ? .linear(duration: 1).repeatForever(autoreverses: false) : .default, value: isDownloading)
+                                .font(.caption)
+
+                            Text(isDownloading ? "Downloading..." : "Download")
+                                .font(.caption)
+                                .fontWeight(.medium)
+                        }
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 6)
+                        .background(LinearGradient(colors: [Color.blue, Color.purple], startPoint: .leading, endPoint: .trailing))
+                        .clipShape(Capsule())
+                        .shadow(radius: 4)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                }
+            }
+        }
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 20)
+                .fill(Color(NSColor.controlBackgroundColor))
+                .shadow(color: .black.opacity(0.08), radius: 10, x: 0, y: 6)
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(Color.gray.opacity(0.1), lineWidth: 0.5)
+        )
+    }
+}
+
+struct ShimmerView: View {
+    @State private var phase: CGFloat = 0
+
+    var body: some View {
+        RoundedRectangle(cornerRadius: 12)
+            .fill(
+                LinearGradient(
+                    gradient: Gradient(colors: [.gray.opacity(0.3), .gray.opacity(0.1), .gray.opacity(0.3)]),
+                    startPoint: .leading,
+                    endPoint: .trailing
+                )
+            )
+            .mask(
+                RoundedRectangle(cornerRadius: 12)
+                    .fill(Color.white)
+                    .opacity(0.5)
+            )
+            .onAppear {
+                withAnimation(.linear(duration: 1.2).repeatForever(autoreverses: false)) {
+                    phase = 1
+                }
+            }
+    }
+}
+
+#Preview {
+    PluginCardView(plugin: PluginUIModel.mock)
+}

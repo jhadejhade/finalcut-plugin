@@ -17,5 +17,7 @@ struct FinalCutPluginsApp: App {
             ContentView(viewModel: viewModel)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
+        .defaultSize(width: 900, height: 700)
+        .windowResizability(.contentSize)
     }
 }
