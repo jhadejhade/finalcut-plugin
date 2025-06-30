@@ -7,19 +7,17 @@
 
 import Foundation
 
-protocol Paginateable: ObservableObject {
-    func fetchData(page: Int)
-}
-
 protocol MainViewViewModelProtocol: Paginateable {
     var plugins: [PluginUIModel] { get }
-    var isLoading: Bool { get }
 }
 
 class MainViewViewModel: MainViewViewModelProtocol {
 
     @Published private(set) var plugins: [PluginUIModel] = []
     @Published private(set) var isLoading: Bool = false
+    @Published private(set) var isLoadingMore: Bool = false
+    @Published private(set) var canLoadMore: Bool = true
+    @Published private(set) var currentPage: Int = 1
     
     private var pluginService: ContentLoadable
     
@@ -28,18 +26,37 @@ class MainViewViewModel: MainViewViewModelProtocol {
     }
     
     func fetchData(page: Int) {
-        isLoading = true
+        if page == 1 {
+            isLoading = true
+            canLoadMore = true
+        } else {
+            isLoadingMore = true
+        }
+        
         Task {
             do {
                 let result: [PluginAPIModel] = try await pluginService.fetchData(page: page)
                 
                 await MainActor.run {
                     isLoading = false
-                    self.plugins = result.map { PluginUIModel(pluginAPIModel: $0) }
+                    isLoadingMore = false
                     
+                    let pluginUIModels = result.map { PluginUIModel(pluginAPIModel: $0) }
+                    
+                    if page > 1 {
+                        plugins.append(contentsOf: pluginUIModels)
+                    } else {
+                        self.plugins = pluginUIModels
+                    }
+                    
+                    canLoadMore = !result.isEmpty
+                    currentPage = page
                 }
             } catch {
-                isLoading = false
+                await MainActor.run {
+                    isLoading = false
+                    isLoadingMore = false
+                }
                 print("Error fetching data: \(error)")
             }
         }
