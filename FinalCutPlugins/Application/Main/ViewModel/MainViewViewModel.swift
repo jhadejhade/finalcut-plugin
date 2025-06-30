@@ -6,9 +6,17 @@
 //
 
 import Foundation
+import CoreData
 
-protocol MainViewViewModelProtocol: Paginateable {
+protocol MainViewViewModelProtocol: Paginateable, Persistible {
     var plugins: [PluginUIModel] { get }
+   
+}
+
+protocol Persistible {
+    associatedtype Item: NSManagedObject
+    func deleteItem(item: Item)
+    func addItem(at index: Int) async throws
 }
 
 class MainViewViewModel: MainViewViewModelProtocol {
@@ -20,9 +28,11 @@ class MainViewViewModel: MainViewViewModelProtocol {
     @Published private(set) var currentPage: Int = 1
     
     private var pluginService: ContentLoadable
+    private let coreDataHelper: CoreDataHelper<PluginPersistenceObject>
     
-    init(pluginService: ContentLoadable = PluginService.shared) {
+    init(pluginService: ContentLoadable = PluginService.shared, viewContext: NSManagedObjectContext = PersistenceController.shared.container.viewContext) {
         self.pluginService = pluginService
+        self.coreDataHelper = CoreDataHelper<PluginPersistenceObject>(viewContext: viewContext)
     }
     
     func fetchData(page: Int) {
@@ -60,5 +70,20 @@ class MainViewViewModel: MainViewViewModelProtocol {
                 print("Error fetching data: \(error)")
             }
         }
+    }
+    
+    // MARK: - CoreData Operations (delegated to CoreDataHelper)
+    
+    func addItem(at index: Int) async throws {
+        Task {
+            let pluginUIModel = plugins[index]
+            await coreDataHelper.createItem(configure: { item in
+                item.from(pluginUIModel: pluginUIModel)
+            })
+        }
+    }
+    
+    func deleteItem(item: PluginPersistenceObject) {
+        
     }
 }

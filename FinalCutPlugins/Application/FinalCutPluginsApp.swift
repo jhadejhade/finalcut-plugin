@@ -15,7 +15,6 @@ struct FinalCutPluginsApp: App {
         WindowGroup {
             let viewModel = MainViewViewModel()
             ContentView(viewModel: viewModel)
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
         .defaultSize(width: 900, height: 700)
         .windowResizability(.contentSize)

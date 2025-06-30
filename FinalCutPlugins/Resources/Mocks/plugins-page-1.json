@@ -6,7 +6,7 @@
     "version": "3.3.1",
     "description": "Description for plugin number 1. This plugin provides various effects for Final Cut Pro.",
     "downloadUrl": "https://example.com/plugins/plugin_001",
-    "imageUrl": "https://via.placeholder.com/150?text=Plugin+1+Icon",
+    "imageUrl": "https://via.placeholder.com/id150?text=Plugin+1+Icon",
     "state": "new"
   },
   {
@@ -27,7 +27,7 @@
     "description": "Description for plugin number 3. This plugin provides various effects for Final Cut Pro.",
     "downloadUrl": "https://example.com/plugins/plugin_003",
     "imageUrl": "https://via.placeholder.com/150?text=Plugin+3+Icon",
-    "state": "installed"
+    "state": "featured"
   },
   {
     "id": "plugin_004",
@@ -57,7 +57,7 @@
     "description": "Description for plugin number 6. This plugin provides various effects for Final Cut Pro.",
     "downloadUrl": "https://example.com/plugins/plugin_006",
     "imageUrl": "https://via.placeholder.com/150?text=Plugin+6+Icon",
-    "state": "installed"
+    "state": "new"
   },
   {
     "id": "plugin_007",
@@ -87,7 +87,7 @@
     "description": "Description for plugin number 9. This plugin provides various effects for Final Cut Pro.",
     "downloadUrl": "https://example.com/plugins/plugin_009",
     "imageUrl": "https://via.placeholder.com/150?text=Plugin+9+Icon",
-    "state": "installed"
+    "state": "new"
   },
   {
     "id": "plugin_010",

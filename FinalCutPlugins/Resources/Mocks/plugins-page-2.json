@@ -17,7 +17,7 @@
     "description": "Description for plugin number 12. This plugin provides various effects for Final Cut Pro.",
     "downloadUrl": "https://example.com/plugins/plugin_012",
     "imageUrl": "https://via.placeholder.com/150?text=Plugin+12+Icon",
-    "state": "installed"
+    "state": "featured"
   },
   {
     "id": "plugin_013",
@@ -47,7 +47,7 @@
     "description": "Description for plugin number 15. This plugin provides various effects for Final Cut Pro.",
     "downloadUrl": "https://example.com/plugins/plugin_015",
     "imageUrl": "https://via.placeholder.com/150?text=Plugin+15+Icon",
-    "state": "installed"
+    "state": "new"
   },
   {
     "id": "plugin_016",
@@ -77,7 +77,7 @@
     "description": "Description for plugin number 18. This plugin provides various effects for Final Cut Pro.",
     "downloadUrl": "https://example.com/plugins/plugin_018",
     "imageUrl": "https://via.placeholder.com/150?text=Plugin+18+Icon",
-    "state": "installed"
+    "state": "new"
   },
   {
     "id": "plugin_019",

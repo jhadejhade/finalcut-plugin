@@ -12,13 +12,11 @@ struct ContentView<T: MainViewViewModelProtocol>: View {
     
     @StateObject var viewModel: T
     
-    @Environment(\.managedObjectContext) private var viewContext
-
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
     @State private var currentPage = 1
+
+    init(viewModel: T) {
+        self._viewModel = StateObject(wrappedValue: viewModel)
+    }
 
     var body: some View {
         NavigationView {
@@ -33,7 +31,6 @@ struct ContentView<T: MainViewViewModelProtocol>: View {
                             }
                         }
                 }
-                .onDelete(perform: deleteItems)
                 
                 if viewModel.isLoadingMore {
                     HStack {
@@ -62,31 +59,9 @@ struct ContentView<T: MainViewViewModelProtocol>: View {
             viewModel.refreshData()
         }
     }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
 }
-
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
 
 #Preview {
     let viewModel = MainViewViewModel()
-    ContentView(viewModel: viewModel).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+    ContentView(viewModel: viewModel)
 }
