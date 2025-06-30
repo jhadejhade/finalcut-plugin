@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct PluginCardView: View {
+    
     let plugin: PluginUIModel
-    var isNew: Bool = true
 
     @State private var isDownloading = false
 
@@ -66,13 +66,31 @@ struct PluginCardView: View {
                             .foregroundColor(.blue)
                             .clipShape(Capsule())
 
-                        if isNew {
+                        // State badge based on plugin state
+                        switch plugin.state {
+                        case .new:
                             Text("New")
                                 .font(.caption2)
                                 .fontWeight(.bold)
                                 .padding(4)
                                 .background(Color.green.opacity(0.2))
                                 .foregroundColor(.green)
+                                .clipShape(Capsule())
+                        case .featured:
+                            Text("Featured")
+                                .font(.caption2)
+                                .fontWeight(.bold)
+                                .padding(4)
+                                .background(Color.orange.opacity(0.2))
+                                .foregroundColor(.orange)
+                                .clipShape(Capsule())
+                        case .installed:
+                            Text("Installed")
+                                .font(.caption2)
+                                .fontWeight(.bold)
+                                .padding(4)
+                                .background(Color.blue.opacity(0.2))
+                                .foregroundColor(.blue)
                                 .clipShape(Capsule())
                         }
                     }

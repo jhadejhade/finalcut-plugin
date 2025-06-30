@@ -6,7 +6,8 @@
     "version": "3.3.1",
     "description": "Description for plugin number 1. This plugin provides various effects for Final Cut Pro.",
     "downloadUrl": "https://example.com/plugins/plugin_001",
-    "imageUrl": "https://via.placeholder.com/150?text=Plugin+1+Icon"
+    "imageUrl": "https://via.placeholder.com/150?text=Plugin+1+Icon",
+    "state": "new"
   },
   {
     "id": "plugin_002",
@@ -15,7 +16,8 @@
     "version": "3.1.2",
     "description": "Description for plugin number 2. This plugin provides various effects for Final Cut Pro.",
     "downloadUrl": "https://example.com/plugins/plugin_002",
-    "imageUrl": "https://via.placeholder.com/150?text=Plugin+2+Icon"
+    "imageUrl": "https://via.placeholder.com/150?text=Plugin+2+Icon",
+    "state": "featured"
   },
   {
     "id": "plugin_003",
@@ -24,7 +26,8 @@
     "version": "2.2.0",
     "description": "Description for plugin number 3. This plugin provides various effects for Final Cut Pro.",
     "downloadUrl": "https://example.com/plugins/plugin_003",
-    "imageUrl": "https://via.placeholder.com/150?text=Plugin+3+Icon"
+    "imageUrl": "https://via.placeholder.com/150?text=Plugin+3+Icon",
+    "state": "installed"
   },
   {
     "id": "plugin_004",
@@ -33,7 +36,8 @@
     "version": "2.7.4",
     "description": "Description for plugin number 4. This plugin provides various effects for Final Cut Pro.",
     "downloadUrl": "https://example.com/plugins/plugin_004",
-    "imageUrl": "https://via.placeholder.com/150?text=Plugin+4+Icon"
+    "imageUrl": "https://via.placeholder.com/150?text=Plugin+4+Icon",
+    "state": "new"
   },
   {
     "id": "plugin_005",
@@ -42,7 +46,8 @@
     "version": "3.7.4",
     "description": "Description for plugin number 5. This plugin provides various effects for Final Cut Pro.",
     "downloadUrl": "https://example.com/plugins/plugin_005",
-    "imageUrl": "https://via.placeholder.com/150?text=Plugin+5+Icon"
+    "imageUrl": "https://via.placeholder.com/150?text=Plugin+5+Icon",
+    "state": "featured"
   },
   {
     "id": "plugin_006",
@@ -51,7 +56,8 @@
     "version": "3.0.7",
     "description": "Description for plugin number 6. This plugin provides various effects for Final Cut Pro.",
     "downloadUrl": "https://example.com/plugins/plugin_006",
-    "imageUrl": "https://via.placeholder.com/150?text=Plugin+6+Icon"
+    "imageUrl": "https://via.placeholder.com/150?text=Plugin+6+Icon",
+    "state": "installed"
   },
   {
     "id": "plugin_007",
@@ -60,7 +66,8 @@
     "version": "1.6.7",
     "description": "Description for plugin number 7. This plugin provides various effects for Final Cut Pro.",
     "downloadUrl": "https://example.com/plugins/plugin_007",
-    "imageUrl": "https://via.placeholder.com/150?text=Plugin+7+Icon"
+    "imageUrl": "https://via.placeholder.com/150?text=Plugin+7+Icon",
+    "state": "new"
   },
   {
     "id": "plugin_008",
@@ -69,7 +76,8 @@
     "version": "1.7.4",
     "description": "Description for plugin number 8. This plugin provides various effects for Final Cut Pro.",
     "downloadUrl": "https://example.com/plugins/plugin_008",
-    "imageUrl": "https://via.placeholder.com/150?text=Plugin+8+Icon"
+    "imageUrl": "https://via.placeholder.com/150?text=Plugin+8+Icon",
+    "state": "featured"
   },
   {
     "id": "plugin_009",
@@ -78,7 +86,8 @@
     "version": "2.6.8",
     "description": "Description for plugin number 9. This plugin provides various effects for Final Cut Pro.",
     "downloadUrl": "https://example.com/plugins/plugin_009",
-    "imageUrl": "https://via.placeholder.com/150?text=Plugin+9+Icon"
+    "imageUrl": "https://via.placeholder.com/150?text=Plugin+9+Icon",
+    "state": "installed"
   },
   {
     "id": "plugin_010",
@@ -87,6 +96,7 @@
     "version": "1.9.3",
     "description": "Description for plugin number 10. This plugin provides various effects for Final Cut Pro.",
     "downloadUrl": "https://example.com/plugins/plugin_010",
-    "imageUrl": "https://via.placeholder.com/150?text=Plugin+10+Icon"
+    "imageUrl": "https://via.placeholder.com/150?text=Plugin+10+Icon",
+    "state": "new"
   }
 ]

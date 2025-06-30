@@ -8,6 +8,12 @@
 import Foundation
 
 struct PluginUIModel: Identifiable {
+    enum State: String {
+        case new
+        case featured
+        case installed
+    }
+    
     let id: String
     let name: String
     let developer: String
@@ -15,6 +21,7 @@ struct PluginUIModel: Identifiable {
     let description: String
     let downloadUrl: URL
     let imageUrl: URL
+    let state: State
     
     init(pluginAPIModel: PluginAPIModel) {
         self.id = pluginAPIModel.id
@@ -24,6 +31,7 @@ struct PluginUIModel: Identifiable {
         self.description = pluginAPIModel.description
         self.downloadUrl = pluginAPIModel.downloadUrl
         self.imageUrl = pluginAPIModel.imageUrl
+        self.state = State(rawValue: pluginAPIModel.state.rawValue) ?? .new
     }
     
     static var mock: PluginUIModel {
@@ -35,7 +43,8 @@ struct PluginUIModel: Identifiable {
                 version: "2.1.0",
                 description: "Professional color correction and grading plugin with advanced tools for cinematic looks.",
                 downloadUrl: URL(string: "https://example.com/download/color-corrector-pro")!,
-                imageUrl: URL(string: "https://example.com/images/color-corrector-pro.png")!
+                imageUrl: URL(string: "https://example.com/images/color-corrector-pro.png")!,
+                state: .installed
             )
         )
     }

@@ -7,7 +7,13 @@
 
 import Foundation
 
-struct PluginAPIModel: Codable, Identifiable {
+struct PluginAPIModel: Decodable, Identifiable {
+    enum State: String, Decodable {
+        case new
+        case featured
+        case installed
+    }
+    
     let id: String
     let name: String
     let developer: String
@@ -15,4 +21,5 @@ struct PluginAPIModel: Codable, Identifiable {
     let description: String
     let downloadUrl: URL
     let imageUrl: URL
+    let state: State
 }

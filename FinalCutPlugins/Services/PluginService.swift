@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ContentLoadable {
-    func fetchData<T: Codable>(page: Int) async throws -> T
+    func fetchData<T: Decodable>(page: Int) async throws -> T
 }
 
 class PluginService: ContentLoadable {
@@ -21,7 +21,7 @@ class PluginService: ContentLoadable {
     static let shared = PluginService()
     
     
-    func fetchData<T: Codable>(page: Int) async throws -> T {
+    func fetchData<T: Decodable>(page: Int) async throws -> T {
         
         try await Task.sleep(nanoseconds: Constants.delayInNanoseconds)
         

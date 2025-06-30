@@ -6,7 +6,8 @@
     "version": "1.9.3",
     "description": "Description for plugin number 11. This plugin provides various effects for Final Cut Pro.",
     "downloadUrl": "https://example.com/plugins/plugin_011",
-    "imageUrl": "https://via.placeholder.com/150?text=Plugin+11+Icon"
+    "imageUrl": "https://via.placeholder.com/150?text=Plugin+11+Icon",
+    "state": "featured"
   },
   {
     "id": "plugin_012",
@@ -15,7 +16,8 @@
     "version": "3.6.4",
     "description": "Description for plugin number 12. This plugin provides various effects for Final Cut Pro.",
     "downloadUrl": "https://example.com/plugins/plugin_012",
-    "imageUrl": "https://via.placeholder.com/150?text=Plugin+12+Icon"
+    "imageUrl": "https://via.placeholder.com/150?text=Plugin+12+Icon",
+    "state": "installed"
   },
   {
     "id": "plugin_013",
@@ -24,7 +26,8 @@
     "version": "3.0.8",
     "description": "Description for plugin number 13. This plugin provides various effects for Final Cut Pro.",
     "downloadUrl": "https://example.com/plugins/plugin_013",
-    "imageUrl": "https://via.placeholder.com/150?text=Plugin+13+Icon"
+    "imageUrl": "https://via.placeholder.com/150?text=Plugin+13+Icon",
+    "state": "new"
   },
   {
     "id": "plugin_014",
@@ -33,7 +36,8 @@
     "version": "1.6.9",
     "description": "Description for plugin number 14. This plugin provides various effects for Final Cut Pro.",
     "downloadUrl": "https://example.com/plugins/plugin_014",
-    "imageUrl": "https://via.placeholder.com/150?text=Plugin+14+Icon"
+    "imageUrl": "https://via.placeholder.com/150?text=Plugin+14+Icon",
+    "state": "featured"
   },
   {
     "id": "plugin_015",
@@ -42,7 +46,8 @@
     "version": "3.6.5",
     "description": "Description for plugin number 15. This plugin provides various effects for Final Cut Pro.",
     "downloadUrl": "https://example.com/plugins/plugin_015",
-    "imageUrl": "https://via.placeholder.com/150?text=Plugin+15+Icon"
+    "imageUrl": "https://via.placeholder.com/150?text=Plugin+15+Icon",
+    "state": "installed"
   },
   {
     "id": "plugin_016",
@@ -51,7 +56,8 @@
     "version": "3.0.6",
     "description": "Description for plugin number 16. This plugin provides various effects for Final Cut Pro.",
     "downloadUrl": "https://example.com/plugins/plugin_016",
-    "imageUrl": "https://via.placeholder.com/150?text=Plugin+16+Icon"
+    "imageUrl": "https://via.placeholder.com/150?text=Plugin+16+Icon",
+    "state": "new"
   },
   {
     "id": "plugin_017",
@@ -60,7 +66,8 @@
     "version": "1.6.2",
     "description": "Description for plugin number 17. This plugin provides various effects for Final Cut Pro.",
     "downloadUrl": "https://example.com/plugins/plugin_017",
-    "imageUrl": "https://via.placeholder.com/150?text=Plugin+17+Icon"
+    "imageUrl": "https://via.placeholder.com/150?text=Plugin+17+Icon",
+    "state": "featured"
   },
   {
     "id": "plugin_018",
@@ -69,7 +76,8 @@
     "version": "3.4.6",
     "description": "Description for plugin number 18. This plugin provides various effects for Final Cut Pro.",
     "downloadUrl": "https://example.com/plugins/plugin_018",
-    "imageUrl": "https://via.placeholder.com/150?text=Plugin+18+Icon"
+    "imageUrl": "https://via.placeholder.com/150?text=Plugin+18+Icon",
+    "state": "installed"
   },
   {
     "id": "plugin_019",
@@ -78,7 +86,8 @@
     "version": "2.7.6",
     "description": "Description for plugin number 19. This plugin provides various effects for Final Cut Pro.",
     "downloadUrl": "https://example.com/plugins/plugin_019",
-    "imageUrl": "https://via.placeholder.com/150?text=Plugin+19+Icon"
+    "imageUrl": "https://via.placeholder.com/150?text=Plugin+19+Icon",
+    "state": "new"
   },
   {
     "id": "plugin_020",
@@ -87,6 +96,7 @@
     "version": "3.7.1",
     "description": "Description for plugin number 20. This plugin provides various effects for Final Cut Pro.",
     "downloadUrl": "https://example.com/plugins/plugin_020",
-    "imageUrl": "https://via.placeholder.com/150?text=Plugin+20+Icon"
+    "imageUrl": "https://via.placeholder.com/150?text=Plugin+20+Icon",
+    "state": "featured"
   }
 ]
