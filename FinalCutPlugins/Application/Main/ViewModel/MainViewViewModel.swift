@@ -10,7 +10,6 @@ import CoreData
 
 protocol MainViewViewModelProtocol: Paginateable, Persistible {
     var plugins: [PluginUIModel] { get }
-   
 }
 
 protocol UIPersistibleObject { }

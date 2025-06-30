@@ -104,12 +104,14 @@ struct PluginCardView<T: Persistible>: View {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                                 viewModel.deleteItem(with: plugin.id)
                                 isUninstalling = false
+                                plugin.isInstalled = false
                             }
                         } else {
                             isDownloading = true
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                                 viewModel.addItem(uiModel: plugin as! T.UIModel)
                                 isDownloading = false
+                                plugin.isInstalled = true
                             }
                         }
                     }) {

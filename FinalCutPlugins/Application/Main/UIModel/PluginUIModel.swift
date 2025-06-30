@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PluginUIModel: Identifiable, UIPersistibleObject {
+class PluginUIModel: Identifiable, UIPersistibleObject {
     enum State: String {
         case new
         case featured
@@ -21,7 +21,7 @@ struct PluginUIModel: Identifiable, UIPersistibleObject {
     let downloadUrl: URL
     let imageUrl: URL
     let state: State
-    let isInstalled: Bool
+    @Published var isInstalled: Bool
     
     init(pluginAPIModel: PluginAPIModel) {
         self.id = pluginAPIModel.id
