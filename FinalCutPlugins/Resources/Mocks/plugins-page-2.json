@@ -4,7 +4,7 @@
     "name": "Plugin Name 11",
     "developer": "Developer Gamma Tools",
     "version": "1.9.3",
-    "description": "Description for plugin number 11. This plugin provides various effects for Final Cut Pro.",
+    "description": "Advanced green screen and chroma key plugin that delivers professional-grade keying results with minimal effort. This plugin uses sophisticated algorithms to create clean, edge-perfect keys even with challenging lighting conditions and color spill. Features include automatic spill suppression, edge refinement tools, and intelligent color matching for seamless compositing. The plugin can handle complex keying scenarios including fine hair detail, motion blur, and transparent objects. It includes advanced masking tools, garbage mattes, and support for multiple key colors simultaneously. Perfect for virtual production, weather broadcasts, and creative content where precise keying is essential for professional results.",
     "downloadUrl": "https://example.com/plugins/plugin_011",
     "imageUrl": "https://via.placeholder.com/150?text=Plugin+11+Icon",
     "state": "featured"
@@ -14,7 +14,7 @@
     "name": "Plugin Name 12",
     "developer": "Developer Gamma Tools",
     "version": "3.6.4",
-    "description": "Description for plugin number 12. This plugin provides various effects for Final Cut Pro.",
+    "description": "Comprehensive slow motion and time manipulation plugin that enables creative temporal effects beyond Final Cut Pro's built-in capabilities. This plugin includes advanced optical flow algorithms, intelligent frame interpolation, and professional-grade speed ramping tools. Features include smooth slow motion generation at any speed, reverse motion effects, and complex time remapping curves. The plugin can create ultra-slow motion effects from standard frame rate footage while maintaining smooth motion and avoiding artifacts. It includes tools for creating speed ramps, freeze frames, and complex temporal transitions. Perfect for sports analysis, artistic projects, and any content requiring sophisticated time manipulation effects.",
     "downloadUrl": "https://example.com/plugins/plugin_012",
     "imageUrl": "https://via.placeholder.com/150?text=Plugin+12+Icon",
     "state": "featured"
@@ -24,7 +24,7 @@
     "name": "Plugin Name 13",
     "developer": "Developer Alpha FX",
     "version": "3.0.8",
-    "description": "Description for plugin number 13. This plugin provides various effects for Final Cut Pro.",
+    "description": "Professional broadcast graphics package that brings television-quality graphics and animations to Final Cut Pro. This plugin includes comprehensive lower thirds, news tickers, weather graphics, and sports scoreboards. Features include real-time data integration, customizable templates, and advanced animation systems. The plugin supports live data feeds, automatic text updates, and complex graphic hierarchies. It includes tools for creating election graphics, stock market tickers, and dynamic infographics. Perfect for news broadcasts, sports coverage, and live event production where professional broadcast graphics are essential for viewer engagement and information delivery.",
     "downloadUrl": "https://example.com/plugins/plugin_013",
     "imageUrl": "https://via.placeholder.com/150?text=Plugin+13+Icon",
     "state": "new"
@@ -34,7 +34,7 @@
     "name": "Plugin Name 14",
     "developer": "Developer Beta Studio",
     "version": "1.6.9",
-    "description": "Description for plugin number 14. This plugin provides various effects for Final Cut Pro.",
+    "description": "Advanced noise reduction and image enhancement plugin that rescues footage shot in challenging conditions. This plugin uses AI-powered algorithms to remove noise while preserving detail, correct exposure issues, and enhance overall image quality. Features include temporal noise reduction, detail recovery tools, and intelligent sharpening algorithms. The plugin can handle various types of noise including luminance noise, color noise, and compression artifacts. It includes tools for recovering shadow and highlight detail, correcting white balance, and enhancing overall image clarity. Perfect for documentary work, low-light footage, and any situation where image quality needs significant improvement.",
     "downloadUrl": "https://example.com/plugins/plugin_014",
     "imageUrl": "https://via.placeholder.com/150?text=Plugin+14+Icon",
     "state": "featured"
@@ -44,7 +44,7 @@
     "name": "Plugin Name 15",
     "developer": "Developer Beta Studio",
     "version": "3.6.5",
-    "description": "Description for plugin number 15. This plugin provides various effects for Final Cut Pro.",
+    "description": "Comprehensive VR and 360-degree video editing suite that enables immersive content creation within Final Cut Pro. This plugin includes specialized tools for stitching, color matching, and effects application in 360-degree environments. Features include automatic horizon correction, VR-optimized transitions, and spatial audio support. The plugin can handle various VR formats including monoscopic and stereoscopic 360 video. It includes tools for creating VR-specific effects, managing spatial relationships, and optimizing content for various VR platforms. Perfect for virtual reality productions, immersive documentaries, and interactive media where traditional editing tools fall short of VR requirements.",
     "downloadUrl": "https://example.com/plugins/plugin_015",
     "imageUrl": "https://via.placeholder.com/150?text=Plugin+15+Icon",
     "state": "new"
@@ -54,7 +54,7 @@
     "name": "Plugin Name 16",
     "developer": "Developer Alpha FX",
     "version": "3.0.6",
-    "description": "Description for plugin number 16. This plugin provides various effects for Final Cut Pro.",
+    "description": "Professional HDR color grading and tone mapping plugin that enables high dynamic range content creation and delivery. This plugin includes advanced HDR tools, tone mapping algorithms, and color space conversion capabilities. Features include HDR preview monitoring, automatic tone mapping, and intelligent color gamut management. The plugin supports various HDR standards including HDR10, Dolby Vision, and HLG. It includes tools for creating HDR content from standard dynamic range footage and converting between different HDR formats. Perfect for streaming content, broadcast delivery, and any production requiring HDR capabilities for enhanced visual impact and professional delivery standards.",
     "downloadUrl": "https://example.com/plugins/plugin_016",
     "imageUrl": "https://via.placeholder.com/150?text=Plugin+16+Icon",
     "state": "new"
@@ -64,7 +64,7 @@
     "name": "Plugin Name 17",
     "developer": "Developer Beta Studio",
     "version": "1.6.2",
-    "description": "Description for plugin number 17. This plugin provides various effects for Final Cut Pro.",
+    "description": "Advanced particle system and motion graphics plugin that creates stunning visual effects and animations. This plugin includes comprehensive particle generators, physics simulations, and advanced animation tools. Features include realistic fire, smoke, water, and explosion effects with full customization capabilities. The plugin supports 3D particle systems, complex force interactions, and dynamic lighting effects. It includes preset libraries for common effects and tools for creating custom particle behaviors. Perfect for music videos, commercials, and creative projects where eye-catching visual effects are essential for capturing audience attention and creating memorable content.",
     "downloadUrl": "https://example.com/plugins/plugin_017",
     "imageUrl": "https://via.placeholder.com/150?text=Plugin+17+Icon",
     "state": "featured"
@@ -74,7 +74,7 @@
     "name": "Plugin Name 18",
     "developer": "Developer Beta Studio",
     "version": "3.4.6",
-    "description": "Description for plugin number 18. This plugin provides various effects for Final Cut Pro.",
+    "description": "Professional film emulation and vintage effects plugin that recreates classic film stocks and analog processing. This plugin includes accurate emulations of popular film stocks, vintage camera effects, and analog processing characteristics. Features include grain simulation, color temperature shifts, and authentic film response curves. The plugin can recreate the look of classic films, add nostalgic character to modern footage, and provide creative grading options. It includes tools for simulating various film formats, processing techniques, and camera characteristics. Perfect for narrative projects, music videos, and any content requiring authentic vintage aesthetics or classic film looks.",
     "downloadUrl": "https://example.com/plugins/plugin_018",
     "imageUrl": "https://via.placeholder.com/150?text=Plugin+18+Icon",
     "state": "new"
@@ -84,7 +84,7 @@
     "name": "Plugin Name 19",
     "developer": "Developer Gamma Tools",
     "version": "2.7.6",
-    "description": "Description for plugin number 19. This plugin provides various effects for Final Cut Pro.",
+    "description": "Comprehensive audio restoration and forensic analysis plugin designed for professional audio cleanup and enhancement. This plugin includes advanced spectral editing tools, forensic audio analysis, and intelligent restoration algorithms. Features include voice isolation, background noise removal, and audio enhancement for difficult recordings. The plugin can handle various audio problems including clicks, pops, hum, and distortion. It includes tools for analyzing audio quality, detecting tampering, and enhancing intelligibility. Perfect for legal work, documentary production, and any situation where audio quality is critical for understanding and professional presentation of spoken content.",
     "downloadUrl": "https://example.com/plugins/plugin_019",
     "imageUrl": "https://via.placeholder.com/150?text=Plugin+19+Icon",
     "state": "new"
@@ -94,7 +94,7 @@
     "name": "Plugin Name 20",
     "developer": "Developer Gamma Tools",
     "version": "3.7.1",
-    "description": "Description for plugin number 20. This plugin provides various effects for Final Cut Pro.",
+    "description": "Advanced 3D compositing and visual effects plugin that brings professional 3D capabilities to Final Cut Pro. This plugin includes 3D modeling tools, advanced lighting systems, and sophisticated rendering capabilities. Features include 3D object tracking, realistic shadows and reflections, and complex material systems. The plugin can integrate 3D elements seamlessly with live-action footage, create virtual sets, and generate complex visual effects. It includes tools for 3D text, architectural visualization, and product rendering. Perfect for commercial work, architectural presentations, and any project requiring sophisticated 3D integration and professional-quality visual effects that compete with dedicated 3D software solutions.",
     "downloadUrl": "https://example.com/plugins/plugin_020",
     "imageUrl": "https://via.placeholder.com/150?text=Plugin+20+Icon",
     "state": "featured"
