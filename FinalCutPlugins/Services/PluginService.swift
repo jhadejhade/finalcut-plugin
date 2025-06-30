@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol ContentLoadable {
+protocol FetchService {
     func fetchData<T: Decodable>(page: Int) async throws -> T
     func sync<T: Decodable>() async throws -> T
 }
 
-class PluginService: ContentLoadable {
+class PluginService: FetchService {
     
     struct Constants {
         /// 0 seconds delay

@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-protocol MainViewViewModelProtocol: Paginateable, Persistible {
+protocol MainViewViewModelProtocol: ContentLoadable, Persistible {
     var plugins: [PluginUIModel] { get }
 }
 
@@ -30,10 +30,10 @@ class MainViewViewModel: MainViewViewModelProtocol {
     @Published private(set) var currentPage: Int = 1
     @Published private(set) var isSyncing: Bool = false
     
-    private var pluginService: ContentLoadable
+    private var pluginService: FetchService
     private let coreDataHelper: CoreDataHelper<PluginPersistenceObject>
     
-    init(pluginService: ContentLoadable = PluginService.shared, viewContext: NSManagedObjectContext = PersistenceController.shared.container.viewContext) {
+    init(pluginService: FetchService = PluginService.shared, viewContext: NSManagedObjectContext = PersistenceController.shared.container.viewContext) {
         self.pluginService = pluginService
         self.coreDataHelper = CoreDataHelper<PluginPersistenceObject>(viewContext: viewContext)
     }

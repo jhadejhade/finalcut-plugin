@@ -18,14 +18,17 @@ struct ContentView<T: MainViewViewModelProtocol>: View {
         NavigationView {
             List {
                 ForEach(viewModel.plugins) { plugin in
-                    PluginCardView(plugin: plugin, viewModel: viewModel)
-                        .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
-                        .listRowSeparator(.hidden)
-                        .onAppear {
-                            if plugin.id == viewModel.plugins.last?.id {
-                                viewModel.loadMoreIfNeeded()
-                            }
+                    NavigationLink(destination: PluginDetailView(plugin: plugin, viewModel: viewModel)) {
+                        PluginCardView(plugin: plugin, viewModel: viewModel)
+                            .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
+                            .listRowSeparator(.hidden)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    .onAppear {
+                        if plugin.id == viewModel.plugins.last?.id {
+                            viewModel.loadMoreIfNeeded()
                         }
+                    }
                 }
                 .loadingMore(viewModel.isLoadingMore)
             }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-protocol Paginateable: ObservableObject {
+protocol ContentLoadable: ObservableObject {
     var isLoading: Bool { get }
     var isLoadingMore: Bool { get }
     var isSyncing: Bool { get }
@@ -20,7 +20,7 @@ protocol Paginateable: ObservableObject {
     func sync()
 }
 
-extension Paginateable {
+extension ContentLoadable {
     func loadMoreIfNeeded() {
         guard canLoadMore,
               !isLoading,
