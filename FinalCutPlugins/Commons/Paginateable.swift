@@ -10,12 +10,14 @@ import SwiftUI
 protocol Paginateable: ObservableObject {
     var isLoading: Bool { get }
     var isLoadingMore: Bool { get }
+    var isSyncing: Bool { get }
     var canLoadMore: Bool { get }
     var currentPage: Int { get }
     
     func fetchData(page: Int)
     func loadMoreIfNeeded()
     func refreshData()
+    func sync()
 }
 
 extension Paginateable {

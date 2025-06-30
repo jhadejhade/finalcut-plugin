@@ -16,34 +16,59 @@ struct ContentView<T: MainViewViewModelProtocol>: View {
 
     var body: some View {
         NavigationView {
-            List {
-                ForEach(viewModel.plugins) { plugin in
-                    PluginCardView(plugin: plugin, viewModel: viewModel)
-                        .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
-                        .listRowSeparator(.hidden)
-                        .onAppear {
-                            if plugin.id == viewModel.plugins.last?.id {
-                                viewModel.loadMoreIfNeeded()
-                            }
-                        }
-                }
-                
-                if viewModel.isLoadingMore {
+            VStack(spacing: 0) {
+                if viewModel.isSyncing {
                     HStack {
-                        Spacer()
                         ProgressView()
                             .scaleEffect(0.8)
-                        Text("Loading more...")
+                        Text("Syncing...")
                             .font(.caption)
                             .foregroundColor(.secondary)
                         Spacer()
                     }
-                    .listRowInsets(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
-                    .listRowSeparator(.hidden)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 8)
+                }
+                
+                List {
+                    ForEach(viewModel.plugins) { plugin in
+                        PluginCardView(plugin: plugin, viewModel: viewModel)
+                            .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
+                            .listRowSeparator(.hidden)
+                            .onAppear {
+                                if plugin.id == viewModel.plugins.last?.id {
+                                    viewModel.loadMoreIfNeeded()
+                                }
+                            }
+                    }
+                    
+                    if viewModel.isLoadingMore {
+                        HStack {
+                            Spacer()
+                            ProgressView()
+                                .scaleEffect(0.8)
+                            Text("Loading more...")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                            Spacer()
+                        }
+                        .listRowInsets(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
+                        .listRowSeparator(.hidden)
+                    }
+                }
+                .listStyle(PlainListStyle())
+            }
+            .navigationTitle("Final Cut Plugins")
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Button {
+                        viewModel.sync()
+                    } label: {
+                        Image(systemName: "arrow.clockwise")
+                    }
+                    .disabled(viewModel.isSyncing)
                 }
             }
-            .listStyle(PlainListStyle())
-            .navigationTitle("Final Cut Plugins")
             .loading(viewModel.isLoading, message: "Loading plugins...")
             .refreshable {
                 viewModel.refreshData()

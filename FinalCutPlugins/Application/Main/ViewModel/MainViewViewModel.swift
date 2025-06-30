@@ -28,6 +28,7 @@ class MainViewViewModel: MainViewViewModelProtocol {
     @Published private(set) var isLoadingMore: Bool = false
     @Published private(set) var canLoadMore: Bool = true
     @Published private(set) var currentPage: Int = 1
+    @Published private(set) var isSyncing: Bool = false
     
     private var pluginService: ContentLoadable
     private let coreDataHelper: CoreDataHelper<PluginPersistenceObject>
@@ -35,6 +36,31 @@ class MainViewViewModel: MainViewViewModelProtocol {
     init(pluginService: ContentLoadable = PluginService.shared, viewContext: NSManagedObjectContext = PersistenceController.shared.container.viewContext) {
         self.pluginService = pluginService
         self.coreDataHelper = CoreDataHelper<PluginPersistenceObject>(viewContext: viewContext)
+    }
+    
+    func sync() {
+        isSyncing = true
+        Task {
+            do {
+                let result: [PluginAPIModel] = try await pluginService.sync()
+                
+                let pluginUIModels = result.map { plugin in
+                    PluginUIModel(
+                        pluginAPIModel: plugin,
+                        isInstalled: false
+                    )
+                }
+                
+                await MainActor.run {
+                    plugins = pluginUIModels
+                    isSyncing = false
+                }
+            } catch {
+                await MainActor.run {
+                    isSyncing = false
+                }
+            }
+        }
     }
     
     func fetchData(page: Int) {
