@@ -13,7 +13,8 @@ struct FinalCutPluginsApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            let viewModel = MainViewViewModel()
+            ContentView(viewModel: viewModel)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
