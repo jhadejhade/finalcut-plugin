@@ -11,7 +11,6 @@ struct PluginAPIModel: Decodable, Identifiable {
     enum State: String, Decodable {
         case new
         case featured
-        case installed
     }
     
     let id: String

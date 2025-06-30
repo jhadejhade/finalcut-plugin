@@ -11,7 +11,6 @@ struct PluginUIModel: Identifiable, UIPersistibleObject {
     enum State: String {
         case new
         case featured
-        case installed
     }
     
     let id: String
@@ -22,6 +21,7 @@ struct PluginUIModel: Identifiable, UIPersistibleObject {
     let downloadUrl: URL
     let imageUrl: URL
     let state: State
+    let isInstalled: Bool
     
     init(pluginAPIModel: PluginAPIModel) {
         self.id = pluginAPIModel.id
@@ -32,6 +32,19 @@ struct PluginUIModel: Identifiable, UIPersistibleObject {
         self.downloadUrl = pluginAPIModel.downloadUrl
         self.imageUrl = pluginAPIModel.imageUrl
         self.state = State(rawValue: pluginAPIModel.state.rawValue) ?? .new
+        self.isInstalled = false
+    }
+    
+    init(pluginAPIModel: PluginAPIModel, isInstalled: Bool) {
+        self.id = pluginAPIModel.id
+        self.name = pluginAPIModel.name
+        self.developer = pluginAPIModel.developer
+        self.version = pluginAPIModel.version
+        self.description = pluginAPIModel.description
+        self.downloadUrl = pluginAPIModel.downloadUrl
+        self.imageUrl = pluginAPIModel.imageUrl
+        self.state = (State(rawValue: pluginAPIModel.state.rawValue) ?? .new)
+        self.isInstalled = isInstalled
     }
     
     static var mock: PluginUIModel {
@@ -44,7 +57,7 @@ struct PluginUIModel: Identifiable, UIPersistibleObject {
                 description: "Professional color correction and grading plugin with advanced tools for cinematic looks.",
                 downloadUrl: URL(string: "https://example.com/download/color-corrector-pro")!,
                 imageUrl: URL(string: "https://example.com/images/color-corrector-pro.png")!,
-                state: .installed
+                state: .new
             )
         )
     }

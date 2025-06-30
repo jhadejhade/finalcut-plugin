@@ -12,6 +12,7 @@ struct PluginCardView<T: Persistible>: View {
     let plugin: PluginUIModel
 
     @State private var isDownloading = false
+    @State private var isUninstalling = false
     @ObservedObject var viewModel: T
     
     var body: some View {
@@ -85,14 +86,6 @@ struct PluginCardView<T: Persistible>: View {
                                 .background(Color.orange.opacity(0.2))
                                 .foregroundColor(.orange)
                                 .clipShape(Capsule())
-                        case .installed:
-                            Text("Installed")
-                                .font(.caption2)
-                                .fontWeight(.bold)
-                                .padding(4)
-                                .background(Color.blue.opacity(0.2))
-                                .foregroundColor(.blue)
-                                .clipShape(Capsule())
                         }
                     }
                 }
@@ -106,30 +99,53 @@ struct PluginCardView<T: Persistible>: View {
                     Spacer()
 
                     Button(action: {
-                        isDownloading = true
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                            viewModel.addItem(uiModel: plugin as! T.UIModel)
-                            isDownloading = false
+                        if plugin.isInstalled {
+                            isUninstalling = true
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                                viewModel.deleteItem(with: plugin.id)
+                                isUninstalling = false
+                            }
+                        } else {
+                            isDownloading = true
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                                viewModel.addItem(uiModel: plugin as! T.UIModel)
+                                isDownloading = false
+                            }
                         }
                     }) {
                         HStack(spacing: 6) {
-                            Image(systemName: isDownloading ? "arrow.down.circle" : "arrow.down.circle.fill")
-                                .rotationEffect(.degrees(isDownloading ? 360 : 0))
-                                .animation(isDownloading ? .linear(duration: 1).repeatForever(autoreverses: false) : .default, value: isDownloading)
-                                .font(.caption)
+                            if plugin.isInstalled {
+                                Image(systemName: isUninstalling ? "trash.circle" : "trash.circle.fill")
+                                    .rotationEffect(.degrees(isUninstalling ? 360 : 0))
+                                    .animation(isUninstalling ? .linear(duration: 1).repeatForever(autoreverses: false) : .default, value: isUninstalling)
+                                    .font(.caption)
+                                Text(isUninstalling ? "Uninstalling..." : "Uninstall")
+                                    .font(.caption)
+                                    .fontWeight(.medium)
+                            } else {
+                                Image(systemName: isDownloading ? "arrow.down.circle" : "arrow.down.circle.fill")
+                                    .rotationEffect(.degrees(isDownloading ? 360 : 0))
+                                    .animation(isDownloading ? .linear(duration: 1).repeatForever(autoreverses: false) : .default, value: isDownloading)
+                                    .font(.caption)
 
-                            Text(isDownloading ? "Downloading..." : "Download")
-                                .font(.caption)
-                                .fontWeight(.medium)
+                                Text(isDownloading ? "Downloading..." : "Download")
+                                    .font(.caption)
+                                    .fontWeight(.medium)
+                            }
                         }
                         .foregroundColor(.white)
                         .padding(.horizontal, 12)
                         .padding(.vertical, 6)
-                        .background(LinearGradient(colors: [Color.blue, Color.purple], startPoint: .leading, endPoint: .trailing))
+                        .background(
+                            plugin.isInstalled
+                                ? LinearGradient(colors: [Color.red, Color.orange], startPoint: .leading, endPoint: .trailing)
+                                : LinearGradient(colors: [Color.blue, Color.purple], startPoint: .leading, endPoint: .trailing)
+                        )
                         .clipShape(Capsule())
                         .shadow(radius: 4)
                     }
                     .buttonStyle(PlainButtonStyle())
+                    .disabled(isDownloading || isUninstalling)
                 }
             }
         }

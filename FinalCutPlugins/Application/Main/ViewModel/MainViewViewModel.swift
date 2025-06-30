@@ -16,10 +16,9 @@ protocol MainViewViewModelProtocol: Paginateable, Persistible {
 protocol UIPersistibleObject { }
 
 protocol Persistible: ObservableObject {
-    associatedtype Item: NSManagedObject
     associatedtype UIModel: UIPersistibleObject
     
-    func deleteItem(item: Item)
+    func deleteItem(with id: String)
     func addItem(uiModel: UIModel)
 }
 
@@ -51,11 +50,22 @@ class MainViewViewModel: MainViewViewModelProtocol {
             do {
                 let result: [PluginAPIModel] = try await pluginService.fetchData(page: page)
                 
+                let installedPlugins = try await coreDataHelper.fetchItems(
+                    predicate: NSPredicate(format: "isInstalled == YES")
+                )
+                
+                let installedPluginIds = Set(installedPlugins.compactMap { $0.id })
+                
                 await MainActor.run {
                     isLoading = false
                     isLoadingMore = false
                     
-                    let pluginUIModels = result.map { PluginUIModel(pluginAPIModel: $0) }
+                    let pluginUIModels = result.map { plugin in
+                        PluginUIModel(
+                            pluginAPIModel: plugin,
+                            isInstalled: installedPluginIds.contains(plugin.id)
+                        )
+                    }
                     
                     if page > 1 {
                         plugins.append(contentsOf: pluginUIModels)
@@ -87,7 +97,9 @@ class MainViewViewModel: MainViewViewModelProtocol {
         }
     }
     
-    func deleteItem(item: PluginPersistenceObject) {
-        
+    func deleteItem(with id: String) {
+        Task {
+            await coreDataHelper.deleteItem(with: id)
+        }
     }
 }

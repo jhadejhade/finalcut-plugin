@@ -91,6 +91,23 @@ class CoreDataHelper<T: NSManagedObject>: ObservableObject {
         await saveContext()
     }
     
+    func deleteItem(with id: String) async {
+        let predicate = NSPredicate(format: "id == %@", id)
+        let request = NSFetchRequest<T>(entityName: entityName)
+        request.predicate = predicate
+        request.fetchLimit = 1
+        
+        do {
+            let items = try viewContext.fetch(request)
+            if let item = items.first {
+                viewContext.delete(item)
+                await saveContext()
+            }
+        } catch {
+            print("Error deleting item with id \(id): \(error)")
+        }
+    }
+    
     func deleteAll() async throws {
         let items = try await fetchItems()
         items.forEach(viewContext.delete)
