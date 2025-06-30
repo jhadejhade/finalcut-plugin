@@ -13,10 +13,14 @@ protocol MainViewViewModelProtocol: Paginateable, Persistible {
    
 }
 
-protocol Persistible {
+protocol UIPersistibleObject { }
+
+protocol Persistible: ObservableObject {
     associatedtype Item: NSManagedObject
+    associatedtype UIModel: UIPersistibleObject
+    
     func deleteItem(item: Item)
-    func addItem(at index: Int) async throws
+    func addItem(uiModel: UIModel)
 }
 
 class MainViewViewModel: MainViewViewModelProtocol {
@@ -74,12 +78,12 @@ class MainViewViewModel: MainViewViewModelProtocol {
     
     // MARK: - CoreData Operations (delegated to CoreDataHelper)
     
-    func addItem(at index: Int) async throws {
+    func addItem(uiModel: PluginUIModel) {
         Task {
-            let pluginUIModel = plugins[index]
-            await coreDataHelper.createItem(configure: { item in
-                item.from(pluginUIModel: pluginUIModel)
-            })
+            let predicate = NSPredicate(format: "id == %@", uiModel.id)
+            await coreDataHelper.createOrUpdateItem(predicate: predicate) { item in
+                item.from(pluginUIModel: uiModel)
+            }
         }
     }
     

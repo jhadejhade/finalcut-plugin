@@ -7,12 +7,13 @@
 
 import SwiftUI
 
-struct PluginCardView: View {
+struct PluginCardView<T: Persistible>: View {
     
     let plugin: PluginUIModel
 
     @State private var isDownloading = false
-
+    @ObservedObject var viewModel: T
+    
     var body: some View {
         HStack(spacing: 16) {
             // Plugin Image with Overlay
@@ -107,6 +108,7 @@ struct PluginCardView: View {
                     Button(action: {
                         isDownloading = true
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                            viewModel.addItem(uiModel: plugin as! T.UIModel)
                             isDownloading = false
                         }
                     }) {
@@ -170,5 +172,5 @@ struct ShimmerView: View {
 }
 
 #Preview {
-    PluginCardView(plugin: PluginUIModel.mock)
+    PluginCardView(plugin: PluginUIModel.mock, viewModel: MainViewViewModel())
 }

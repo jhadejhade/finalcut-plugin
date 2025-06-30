@@ -14,15 +14,11 @@ struct ContentView<T: MainViewViewModelProtocol>: View {
     
     @State private var currentPage = 1
 
-    init(viewModel: T) {
-        self._viewModel = StateObject(wrappedValue: viewModel)
-    }
-
     var body: some View {
         NavigationView {
             List {
                 ForEach(viewModel.plugins) { plugin in
-                    PluginCardView(plugin: plugin)
+                    PluginCardView(plugin: plugin, viewModel: viewModel)
                         .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
                         .listRowSeparator(.hidden)
                         .onAppear {

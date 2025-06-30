@@ -17,7 +17,7 @@ extension PluginPersistenceObject {
         self.information = pluginUIModel.description
         self.downloadURL = pluginUIModel.downloadUrl.absoluteString
         self.state = pluginUIModel.state.rawValue
-        self.isInstalled = pluginUIModel.state == .installed
+        self.isInstalled = true
         self.timestamp = Date()
     }
 }

@@ -45,6 +45,40 @@ class CoreDataHelper<T: NSManagedObject>: ObservableObject {
     // MARK: - CRUD Operations
     
     @discardableResult
+    func createOrUpdateItem(
+        predicate: NSPredicate? = nil,
+        configure: (T) -> Void = { _ in }
+    ) async -> T {
+        var item: T
+        
+        if let predicate = predicate {
+            // Try to find existing item
+            let request = NSFetchRequest<T>(entityName: entityName)
+            request.predicate = predicate
+            request.fetchLimit = 1
+            
+            do {
+                let existingItems = try viewContext.fetch(request)
+                if let existingItem = existingItems.first {
+                    item = existingItem
+                } else {
+                    item = NSEntityDescription.insertNewObject(forEntityName: entityName, into: viewContext) as! T
+                }
+            } catch {
+                // If fetch fails, create new item
+                item = NSEntityDescription.insertNewObject(forEntityName: entityName, into: viewContext) as! T
+            }
+        } else {
+            // No predicate provided, always create new item
+            item = NSEntityDescription.insertNewObject(forEntityName: entityName, into: viewContext) as! T
+        }
+        
+        configure(item)
+        await saveContext()
+        return item
+    }
+    
+    @discardableResult
     func createItem(configure: (T) -> Void = { _ in }) async -> T {
         let newItem = NSEntityDescription.insertNewObject(forEntityName: entityName, into: viewContext) as! T
         configure(newItem)

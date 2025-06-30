@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PluginUIModel: Identifiable {
+struct PluginUIModel: Identifiable, UIPersistibleObject {
     enum State: String {
         case new
         case featured
