@@ -1,102 +1,392 @@
 [
   {
     "id": "plugin_001",
-    "name": "Plugin Name 1",
+    "name": "CineFX Pro",
     "developer": "Developer Beta Studio",
     "version": "4.3.1",
     "description": "A comprehensive video effects plugin that transforms your Final Cut Pro editing experience with over 50 professional-grade transitions, color grading tools, and visual effects. This plugin includes advanced motion graphics templates, customizable particle systems, and industry-standard color correction presets used by Hollywood professionals. Perfect for creating cinematic content, documentaries, and commercial projects. Features include 4K and 8K support, GPU acceleration for real-time preview, and seamless integration with Final Cut Pro's timeline. The plugin also offers extensive customization options with keyframe animation support, allowing editors to create unique visual styles and effects that stand out from conventional video content.",
     "downloadUrl": "https://example.com/plugins/plugin_001",
-    "imageUrl": "https://via.placeholder.com/id150?text=Plugin+1+Icon",
-    "state": "new"
+    "imageUrl": "https://via.placeholder.com/150?text=CineFX+Pro",
+    "state": "new",
+    "category": "Video Effects",
+    "size": "245 MB",
+    "updated": "Jan 6, 2025",
+    "language": "English, Spanish, French",
+    "compatibility": "Final Cut Pro 10.6+",
+    "price": "$149.99",
+    "features": [
+      "50+ Professional Transitions",
+      "Advanced Color Grading Tools",
+      "Motion Graphics Templates",
+      "Particle System Effects",
+      "4K/8K Support",
+      "GPU Acceleration",
+      "Keyframe Animation",
+      "Real-time Preview"
+    ],
+    "systemRequirements": {
+      "macOS": "macOS 12.0 or later",
+      "finalCutPro": "Final Cut Pro 10.6 or later",
+      "memory": "8GB RAM minimum, 16GB recommended",
+      "graphics": "Metal-compatible graphics card",
+      "processor": "Intel Core i5 or Apple Silicon M1/M2",
+      "storage": "500MB available space"
+    },
+    "screenshots": [
+      "https://via.placeholder.com/800x450?text=CineFX+Pro+Screenshot+1",
+      "https://via.placeholder.com/800x450?text=CineFX+Pro+Screenshot+2",
+      "https://via.placeholder.com/800x450?text=CineFX+Pro+Screenshot+3"
+    ]
   },
   {
     "id": "plugin_002",
-    "name": "Plugin Name 2",
+    "name": "AudioMaster Suite",
     "developer": "Developer Alpha FX",
     "version": "3.5.2",
     "description": "Professional audio enhancement suite designed specifically for Final Cut Pro users who demand pristine sound quality. This plugin includes advanced noise reduction algorithms, multi-band EQ with surgical precision, and intelligent audio restoration tools that can salvage even the most challenging recordings. Features include real-time spectral analysis, AI-powered dialogue enhancement, and automatic level matching across clips. The plugin supports up to 32-bit/192kHz audio processing and includes presets for various scenarios including podcast production, music videos, and corporate presentations. With its intuitive interface and powerful processing capabilities, this plugin has become an essential tool for audio post-production professionals worldwide.",
     "downloadUrl": "https://example.com/plugins/plugin_002",
-    "imageUrl": "https://via.placeholder.com/150?text=Plugin+2+Icon",
-    "state": "featured"
+    "imageUrl": "https://via.placeholder.com/150?text=AudioMaster+Suite",
+    "state": "featured",
+    "category": "Audio Enhancement",
+    "size": "89 MB",
+    "updated": "Jan 7, 2025",
+    "language": "English, German, Japanese",
+    "compatibility": "Final Cut Pro 10.5+",
+    "price": "$199.99",
+    "features": [
+      "Advanced Noise Reduction",
+      "Multi-band EQ",
+      "AI-Powered Dialogue Enhancement",
+      "Spectral Analysis",
+      "32-bit/192kHz Processing",
+      "Automatic Level Matching",
+      "Podcast Presets",
+      "Audio Restoration Tools"
+    ],
+    "systemRequirements": {
+      "macOS": "macOS 11.0 or later",
+      "finalCutPro": "Final Cut Pro 10.5 or later",
+      "memory": "4GB RAM minimum, 8GB recommended",
+      "graphics": "Any Metal-compatible graphics card",
+      "processor": "Intel Core i3 or Apple Silicon M1/M2",
+      "storage": "200MB available space"
+    },
+    "screenshots": [
+      "https://via.placeholder.com/800x450?text=AudioMaster+Suite+Screenshot+1",
+      "https://via.placeholder.com/800x450?text=AudioMaster+Suite+Screenshot+2",
+      "https://via.placeholder.com/800x450?text=AudioMaster+Suite+Screenshot+3"
+    ]
   },
   {
     "id": "plugin_003",
-    "name": "Plugin Name 3",
+    "name": "TypeMotion Pro",
     "developer": "Developer Alpha FX",
     "version": "2.2.24",
     "description": "Revolutionary title and text animation plugin that brings broadcast-quality typography to Final Cut Pro. This comprehensive toolkit includes over 200 animated text templates, kinetic typography presets, and advanced text effects that rival dedicated motion graphics software. The plugin features 3D text capabilities, particle-based animations, and seamless integration with custom fonts and graphics. Editors can create professional lower thirds, animated headlines, and complex text sequences with ease. The plugin supports multi-language typography, right-to-left text rendering, and includes advanced kerning and tracking controls. Perfect for news broadcasts, corporate videos, and social media content creation.",
     "downloadUrl": "https://example.com/plugins/plugin_003",
-    "imageUrl": "https://via.placeholder.com/150?text=Plugin+3+Icon",
-    "state": "featured"
+    "imageUrl": "https://via.placeholder.com/150?text=TypeMotion+Pro",
+    "state": "featured",
+    "category": "Typography & Titles",
+    "size": "156 MB",
+    "updated": "Jan 4, 2025",
+    "language": "Multi-language Support",
+    "compatibility": "Final Cut Pro 10.4+",
+    "price": "$99.99",
+    "features": [
+      "200+ Animated Text Templates",
+      "3D Text Capabilities",
+      "Kinetic Typography Presets",
+      "Multi-language Support",
+      "Right-to-left Text Rendering",
+      "Advanced Kerning Controls",
+      "Particle-based Animations",
+      "Custom Font Integration"
+    ],
+    "systemRequirements": {
+      "macOS": "macOS 10.15 or later",
+      "finalCutPro": "Final Cut Pro 10.4 or later",
+      "memory": "6GB RAM minimum, 12GB recommended",
+      "graphics": "Metal-compatible graphics card with 2GB VRAM",
+      "processor": "Intel Core i5 or Apple Silicon M1/M2",
+      "storage": "300MB available space"
+    },
+    "screenshots": [
+      "https://via.placeholder.com/800x450?text=TypeMotion+Pro+Screenshot+1",
+      "https://via.placeholder.com/800x450?text=TypeMotion+Pro+Screenshot+2",
+      "https://via.placeholder.com/800x450?text=TypeMotion+Pro+Screenshot+3"
+    ]
   },
   {
     "id": "plugin_004",
-    "name": "Plugin Name 4",
+    "name": "StabiLens Pro",
     "developer": "Developer Gamma Tools",
     "version": "6.7.4",
     "description": "Advanced stabilization and lens correction plugin that delivers professional-grade image stabilization and optical corrections. This plugin uses cutting-edge algorithms to analyze and correct camera shake, rolling shutter effects, and lens distortions in real-time. Features include horizon stabilization, advanced motion tracking, and automatic lens profile detection for over 500 camera and lens combinations. The plugin excels at handling drone footage, handheld shots, and action camera content. It includes specialized tools for fisheye correction, chromatic aberration removal, and vignetting compensation. With its GPU-accelerated processing and intuitive controls, this plugin has become indispensable for documentary filmmakers and content creators working with challenging footage.",
     "downloadUrl": "https://example.com/plugins/plugin_004",
-    "imageUrl": "https://via.placeholder.com/150?text=Plugin+4+Icon",
-    "state": "new"
+    "imageUrl": "https://via.placeholder.com/150?text=StabiLens+Pro",
+    "state": "new",
+    "category": "Stabilization & Correction",
+    "size": "178 MB",
+    "updated": "Jan 8, 2025",
+    "language": "English, Chinese, Korean",
+    "compatibility": "Final Cut Pro 10.5+",
+    "price": "$129.99",
+    "features": [
+      "Advanced Image Stabilization",
+      "Lens Profile Detection (500+ combinations)",
+      "Rolling Shutter Correction",
+      "Horizon Stabilization",
+      "Fisheye Correction",
+      "Chromatic Aberration Removal",
+      "Motion Tracking",
+      "GPU Acceleration"
+    ],
+    "systemRequirements": {
+      "macOS": "macOS 11.0 or later",
+      "finalCutPro": "Final Cut Pro 10.5 or later",
+      "memory": "8GB RAM minimum, 16GB recommended",
+      "graphics": "Metal-compatible graphics card with 4GB VRAM",
+      "processor": "Intel Core i7 or Apple Silicon M1 Pro/M2 Pro",
+      "storage": "400MB available space"
+    },
+    "screenshots": [
+      "https://via.placeholder.com/800x450?text=StabiLens+Pro+Screenshot+1",
+      "https://via.placeholder.com/800x450?text=StabiLens+Pro+Screenshot+2",
+      "https://via.placeholder.com/800x450?text=StabiLens+Pro+Screenshot+3"
+    ]
   },
   {
     "id": "plugin_005",
-    "name": "Plugin Name 5",
+    "name": "WorkFlow Master",
     "developer": "Developer Gamma Tools",
     "version": "9.7.2",
     "description": "Comprehensive workflow automation plugin that streamlines the post-production process for professional editors. This plugin includes batch processing tools, intelligent media organization, and automated backup systems that save hours of manual work. Features include smart proxy generation, automated color matching across clips, and intelligent audio sync for multi-camera projects. The plugin can automatically detect and organize footage by scene, camera angle, and lighting conditions. It includes advanced project management tools, collaborative features for team editing, and integration with popular cloud storage services. Perfect for large-scale productions, documentary series, and commercial projects where efficiency and organization are paramount.",
     "downloadUrl": "https://example.com/plugins/plugin_005",
-    "imageUrl": "https://via.placeholder.com/150?text=Plugin+5+Icon",
-    "state": "featured"
+    "imageUrl": "https://via.placeholder.com/150?text=WorkFlow+Master",
+    "state": "featured",
+    "category": "Workflow & Organization",
+    "size": "67 MB",
+    "updated": "Jan 9, 2025",
+    "language": "English, French, Italian",
+    "compatibility": "Final Cut Pro 10.6+",
+    "price": "$249.99",
+    "features": [
+      "Batch Processing Tools",
+      "Intelligent Media Organization",
+      "Automated Backup Systems",
+      "Smart Proxy Generation",
+      "Automatic Color Matching",
+      "Multi-camera Audio Sync",
+      "Cloud Storage Integration",
+      "Team Collaboration Features"
+    ],
+    "systemRequirements": {
+      "macOS": "macOS 12.0 or later",
+      "finalCutPro": "Final Cut Pro 10.6 or later",
+      "memory": "16GB RAM minimum, 32GB recommended",
+      "graphics": "Any Metal-compatible graphics card",
+      "processor": "Intel Core i7 or Apple Silicon M1 Pro/M2 Pro",
+      "storage": "1GB available space"
+    },
+    "screenshots": [
+      "https://via.placeholder.com/800x450?text=WorkFlow+Master+Screenshot+1",
+      "https://via.placeholder.com/800x450?text=WorkFlow+Master+Screenshot+2",
+      "https://via.placeholder.com/800x450?text=WorkFlow+Master+Screenshot+3"
+    ]
   },
   {
     "id": "plugin_006",
-    "name": "Plugin Name 6",
+    "name": "ColorGrade Cinema",
     "developer": "Developer Alpha FX",
     "version": "19.0.7",
     "description": "Cinematic color grading suite that brings professional color correction and grading tools to Final Cut Pro. This plugin includes advanced color wheels, curves, and vector scopes that rival dedicated color grading software. Features include film emulation LUTs, HDR tone mapping, and intelligent skin tone protection. The plugin supports industry-standard color spaces including Rec. 709, Rec. 2020, and DCI-P3. It includes preset looks inspired by popular films and TV shows, as well as tools for creating custom grade libraries. The plugin's real-time processing capabilities allow for immediate feedback during the grading process, making it perfect for both quick corrections and detailed creative grading sessions.",
     "downloadUrl": "https://example.com/plugins/plugin_006",
-    "imageUrl": "https://via.placeholder.com/150?text=Plugin+6+Icon",
-    "state": "new"
+    "imageUrl": "https://via.placeholder.com/150?text=ColorGrade+Cinema",
+    "state": "new",
+    "category": "Color Grading",
+    "size": "312 MB",
+    "updated": "Jan 3, 2025",
+    "language": "English, Portuguese, Russian",
+    "compatibility": "Final Cut Pro 10.5+",
+    "price": "$179.99",
+    "features": [
+      "Advanced Color Wheels & Curves",
+      "Film Emulation LUTs",
+      "HDR Tone Mapping",
+      "Skin Tone Protection",
+      "Rec. 709/2020/DCI-P3 Support",
+      "Vector Scopes",
+      "Custom Grade Libraries",
+      "Real-time Processing"
+    ],
+    "systemRequirements": {
+      "macOS": "macOS 11.0 or later",
+      "finalCutPro": "Final Cut Pro 10.5 or later",
+      "memory": "12GB RAM minimum, 24GB recommended",
+      "graphics": "Metal-compatible graphics card with 6GB VRAM",
+      "processor": "Intel Core i7 or Apple Silicon M1 Pro/M2 Pro",
+      "storage": "600MB available space"
+    },
+    "screenshots": [
+      "https://via.placeholder.com/800x450?text=ColorGrade+Cinema+Screenshot+1",
+      "https://via.placeholder.com/800x450?text=ColorGrade+Cinema+Screenshot+2",
+      "https://via.placeholder.com/800x450?text=ColorGrade+Cinema+Screenshot+3"
+    ]
   },
   {
     "id": "plugin_007",
-    "name": "Plugin Name 7",
+    "name": "MotionTrack VFX",
     "developer": "Developer Gamma Tools",
     "version": "6.6.7",
     "description": "Professional motion tracking and visual effects plugin that enables advanced compositing and VFX work within Final Cut Pro. This plugin includes planar tracking, 3D camera tracking, and object removal tools that were previously only available in dedicated VFX software. Features include advanced keying algorithms, rotoscoping tools, and particle systems for creating realistic effects. The plugin can track complex movements and apply graphics, text, or effects that follow the motion perfectly. It includes tools for removing unwanted objects, adding virtual elements, and creating complex composite shots. Perfect for commercial work, music videos, and independent filmmaking where professional VFX capabilities are essential.",
     "downloadUrl": "https://example.com/plugins/plugin_007",
-    "imageUrl": "https://via.placeholder.com/150?text=Plugin+7+Icon",
-    "state": "new"
+    "imageUrl": "https://via.placeholder.com/150?text=MotionTrack+VFX",
+    "state": "new",
+    "category": "Visual Effects",
+    "size": "423 MB",
+    "updated": "Jan 1, 2025",
+    "language": "English, Japanese, Korean",
+    "compatibility": "Final Cut Pro 10.6+",
+    "price": "$299.99",
+    "features": [
+      "Planar Motion Tracking",
+      "3D Camera Tracking",
+      "Object Removal Tools",
+      "Advanced Keying Algorithms",
+      "Rotoscoping Tools",
+      "Particle Systems",
+      "Virtual Element Integration",
+      "Complex Compositing"
+    ],
+    "systemRequirements": {
+      "macOS": "macOS 12.0 or later",
+      "finalCutPro": "Final Cut Pro 10.6 or later",
+      "memory": "16GB RAM minimum, 32GB recommended",
+      "graphics": "Metal-compatible graphics card with 8GB VRAM",
+      "processor": "Intel Core i9 or Apple Silicon M1 Max/M2 Max",
+      "storage": "800MB available space"
+    },
+    "screenshots": [
+      "https://via.placeholder.com/800x450?text=MotionTrack+VFX+Screenshot+1",
+      "https://via.placeholder.com/800x450?text=MotionTrack+VFX+Screenshot+2",
+      "https://via.placeholder.com/800x450?text=MotionTrack+VFX+Screenshot+3"
+    ]
   },
   {
     "id": "plugin_008",
-    "name": "Plugin Name 8",
+    "name": "MultiCam Sync Pro",
     "developer": "Developer Beta Studio",
     "version": "19.7.4",
     "description": "Advanced multicam editing and synchronization plugin that simplifies complex multi-camera productions. This plugin can automatically sync footage from unlimited camera angles using advanced audio waveform analysis and timecode matching. Features include automatic angle detection, intelligent clip grouping, and seamless timeline integration. The plugin supports various camera formats and frame rates, automatically handling conversion and synchronization. It includes tools for managing large multicam projects, with features like automatic backup angle creation and intelligent proxy workflows. Perfect for live events, interviews, concerts, and any production requiring multiple camera angles. The plugin's robust synchronization algorithms ensure perfect sync even with challenging audio conditions.",
     "downloadUrl": "https://example.com/plugins/plugin_008",
-    "imageUrl": "https://via.placeholder.com/150?text=Plugin+8+Icon",
-    "state": "featured"
+    "imageUrl": "https://via.placeholder.com/150?text=MultiCam+Sync+Pro",
+    "state": "featured",
+    "category": "Multi-camera",
+    "size": "134 MB",
+    "updated": "Jan 2, 2025",
+    "language": "English, Spanish, Portuguese",
+    "compatibility": "Final Cut Pro 10.4+",
+    "price": "$159.99",
+    "features": [
+      "Unlimited Camera Angles",
+      "Audio Waveform Analysis",
+      "Timecode Matching",
+      "Automatic Angle Detection",
+      "Intelligent Clip Grouping",
+      "Format Conversion Support",
+      "Proxy Workflow Integration",
+      "Backup Angle Creation"
+    ],
+    "systemRequirements": {
+      "macOS": "macOS 10.15 or later",
+      "finalCutPro": "Final Cut Pro 10.4 or later",
+      "memory": "8GB RAM minimum, 16GB recommended",
+      "graphics": "Metal-compatible graphics card",
+      "processor": "Intel Core i5 or Apple Silicon M1/M2",
+      "storage": "300MB available space"
+    },
+    "screenshots": [
+      "https://via.placeholder.com/800x450?text=MultiCam+Sync+Pro+Screenshot+1",
+      "https://via.placeholder.com/800x450?text=MultiCam+Sync+Pro+Screenshot+2",
+      "https://via.placeholder.com/800x450?text=MultiCam+Sync+Pro+Screenshot+3"
+    ]
   },
   {
     "id": "plugin_009",
-    "name": "Plugin Name 9",
+    "name": "SocialCut Optimizer",
     "developer": "Developer Beta Studio",
     "version": "24.6.8",
     "description": "Comprehensive social media optimization plugin designed for content creators who need to repurpose their content across multiple platforms. This plugin includes automated aspect ratio conversion, intelligent cropping algorithms, and platform-specific optimization presets. Features include automatic safe zone detection, text legibility analysis, and batch export capabilities for multiple social media formats simultaneously. The plugin can automatically detect faces and important content areas to ensure optimal framing across different aspect ratios. It includes presets for Instagram Stories, TikTok, YouTube Shorts, and traditional social media posts. Perfect for influencers, brands, and content creators who need to maximize their content's reach across multiple platforms efficiently.",
     "downloadUrl": "https://example.com/plugins/plugin_009",
-    "imageUrl": "https://via.placeholder.com/150?text=Plugin+9+Icon",
-    "state": "new"
+    "imageUrl": "https://via.placeholder.com/150?text=SocialCut+Optimizer",
+    "state": "new",
+    "category": "Social Media",
+    "size": "92 MB",
+    "updated": "Jan 5, 2025",
+    "language": "English, Spanish, French, German",
+    "compatibility": "Final Cut Pro 10.5+",
+    "price": "$79.99",
+    "features": [
+      "Automated Aspect Ratio Conversion",
+      "Intelligent Cropping Algorithms",
+      "Platform-specific Presets",
+      "Safe Zone Detection",
+      "Text Legibility Analysis",
+      "Batch Export Capabilities",
+      "Face Detection",
+      "Multi-platform Optimization"
+    ],
+    "systemRequirements": {
+      "macOS": "macOS 11.0 or later",
+      "finalCutPro": "Final Cut Pro 10.5 or later",
+      "memory": "6GB RAM minimum, 12GB recommended",
+      "graphics": "Metal-compatible graphics card",
+      "processor": "Intel Core i5 or Apple Silicon M1/M2",
+      "storage": "200MB available space"
+    },
+    "screenshots": [
+      "https://via.placeholder.com/800x450?text=SocialCut+Optimizer+Screenshot+1",
+      "https://via.placeholder.com/800x450?text=SocialCut+Optimizer+Screenshot+2",
+      "https://via.placeholder.com/800x450?text=SocialCut+Optimizer+Screenshot+3"
+    ]
   },
   {
     "id": "plugin_010",
-    "name": "Plugin Name 10",
+    "name": "AudioStudio Master",
     "developer": "Developer Gamma Tools",
     "version": "1.9.3",
     "description": "Professional audio mixing and mastering suite that transforms Final Cut Pro into a complete audio post-production environment. This plugin includes advanced mixing consoles, professional-grade effects processors, and intelligent mastering tools. Features include multi-band compression, parametric EQ with spectrum analysis, and advanced reverb and delay processors. The plugin supports surround sound mixing up to 7.1 channels and includes tools for audio restoration and enhancement. It features automatic loudness compliance for broadcast standards, intelligent dialogue mixing, and advanced audio visualization tools. Perfect for filmmakers, podcasters, and content creators who need professional audio quality without leaving Final Cut Pro's familiar environment.",
     "downloadUrl": "https://example.com/plugins/plugin_010",
-    "imageUrl": "https://via.placeholder.com/150?text=Plugin+10+Icon",
-    "state": "new"
+    "imageUrl": "https://via.placeholder.com/150?text=AudioStudio+Master",
+    "state": "new",
+    "category": "Audio Mixing",
+    "size": "198 MB",
+    "updated": "Dec 15, 2024",
+    "language": "English, German, French, Japanese",
+    "compatibility": "Final Cut Pro 10.5+",
+    "price": "$219.99",
+    "features": [
+      "Advanced Mixing Console",
+      "Multi-band Compression",
+      "Parametric EQ with Spectrum Analysis",
+      "7.1 Surround Sound Support",
+      "Audio Restoration Tools",
+      "Broadcast Loudness Compliance",
+      "Intelligent Dialogue Mixing",
+      "Audio Visualization Tools"
+    ],
+    "systemRequirements": {
+      "macOS": "macOS 11.0 or later",
+      "finalCutPro": "Final Cut Pro 10.5 or later",
+      "memory": "8GB RAM minimum, 16GB recommended",
+      "graphics": "Any Metal-compatible graphics card",
+      "processor": "Intel Core i7 or Apple Silicon M1 Pro/M2 Pro",
+      "storage": "400MB available space"
+    },
+    "screenshots": [
+      "https://via.placeholder.com/800x450?text=AudioStudio+Master+Screenshot+1",
+      "https://via.placeholder.com/800x450?text=AudioStudio+Master+Screenshot+2",
+      "https://via.placeholder.com/800x450?text=AudioStudio+Master+Screenshot+3"
+    ]
   }
 ]
