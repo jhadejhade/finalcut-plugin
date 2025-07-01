@@ -16,7 +16,8 @@ struct FinalCutPluginsApp: App {
             let viewModel = MainViewViewModel()
             ContentView(viewModel: viewModel)
         }
-        .defaultSize(width: 900, height: 700)
+        .defaultSize(width: 2000, height: 1000)
+        .defaultPosition(.center)
         .windowResizability(.contentSize)
     }
 }
