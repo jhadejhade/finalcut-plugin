@@ -13,6 +13,15 @@ struct PluginAPIModel: Decodable, Identifiable {
         case featured
     }
     
+    struct SystemRequirements: Decodable {
+        let macOS: String
+        let finalCutPro: String
+        let memory: String
+        let graphics: String
+        let processor: String
+        let storage: String
+    }
+    
     let id: String
     let name: String
     let developer: String
@@ -21,4 +30,13 @@ struct PluginAPIModel: Decodable, Identifiable {
     let downloadUrl: URL
     let imageUrl: URL
     let state: State
+    let category: String
+    let size: String
+    let updated: String
+    let language: String
+    let compatibility: String
+    let price: String
+    let features: [String]
+    let systemRequirements: SystemRequirements
+    let screenshots: [URL]
 }

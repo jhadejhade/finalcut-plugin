@@ -37,16 +37,16 @@ struct PluginDetailView<T: Persistible>: View {
                         )
                         
                         // Screenshots Section
-                        PluginScreenshotsView(selectedScreenshot: $selectedScreenshot)
+                        PluginScreenshotsView(plugin: plugin)
                         
                         // Features Section
-                        PluginFeaturesView()
+                        PluginFeaturesView(plugin: plugin)
                         
                         // System Requirements Section
-                        PluginSystemRequirementsView()
+                        PluginSystemRequirementsView(plugin: plugin)
                         
                         // Additional Info Section
-                        PluginAdditionalInfoView()
+                        PluginAdditionalInfoView(plugin: plugin)
                     }
                     .background(Color(NSColor.windowBackgroundColor))
                     .padding(.top)

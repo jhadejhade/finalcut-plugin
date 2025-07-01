@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct PluginAdditionalInfoView: View {
+    let plugin: PluginUIModel
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             HStack {
@@ -20,11 +22,12 @@ struct PluginAdditionalInfoView: View {
             }
             
             VStack(spacing: 0) {
-                InfoRow(title: "Category", value: "Video Effects")
-                InfoRow(title: "Size", value: "124 MB")
-                InfoRow(title: "Updated", value: "Dec 15, 2024")
-                InfoRow(title: "Language", value: "English")
-                InfoRow(title: "Compatibility", value: "Final Cut Pro")
+                InfoRow(title: "Category", value: plugin.category)
+                InfoRow(title: "Size", value: plugin.size)
+                InfoRow(title: "Updated", value: plugin.updated)
+                InfoRow(title: "Language", value: plugin.language)
+                InfoRow(title: "Compatibility", value: plugin.compatibility)
+                InfoRow(title: "Price", value: plugin.price)
             }
             .clipShape(RoundedRectangle(cornerRadius: 8))
         }

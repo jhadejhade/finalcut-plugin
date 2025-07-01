@@ -8,13 +8,7 @@
 import SwiftUI
 
 struct PluginSystemRequirementsView: View {
-    private let systemRequirements = [
-        "macOS 12.0 or later",
-        "Final Cut Pro 10.6+",
-        "8GB RAM minimum",
-        "Metal-compatible GPU",
-        "2GB free disk space"
-    ]
+    let plugin: PluginUIModel
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -27,26 +21,43 @@ struct PluginSystemRequirementsView: View {
                 Spacer()
             }
             
-            VStack(alignment: .leading, spacing: 8) {
-                ForEach(systemRequirements, id: \.self) { requirement in
-                    HStack(spacing: 8) {
-                        Image(systemName: "desktopcomputer")
-                            .foregroundColor(.blue)
-                            .font(.caption)
-                        
-                        Text(requirement)
-                            .font(.caption)
-                            .foregroundColor(.secondary)
-                        
-                        Spacer()
-                    }
-                    .padding(.vertical, 4)
-                }
+            VStack(spacing: 0) {
+                SystemRequirementRow(title: "macOS", value: plugin.systemRequirements.macOS)
+                SystemRequirementRow(title: "Final Cut Pro", value: plugin.systemRequirements.finalCutPro)
+                SystemRequirementRow(title: "Memory", value: plugin.systemRequirements.memory)
+                SystemRequirementRow(title: "Graphics", value: plugin.systemRequirements.graphics)
+                SystemRequirementRow(title: "Processor", value: plugin.systemRequirements.processor)
+                SystemRequirementRow(title: "Storage", value: plugin.systemRequirements.storage)
             }
-            .padding()
-            .background(Color(NSColor.controlBackgroundColor))
-            .clipShape(RoundedRectangle(cornerRadius: 12))
+            .clipShape(RoundedRectangle(cornerRadius: 8))
         }
         .padding(.horizontal, 20)
+        .padding(.bottom, 40)
+    }
+}
+
+struct SystemRequirementRow: View {
+    let title: String
+    let value: String
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            HStack {
+                Text(title)
+                    .font(.subheadline)
+                    .fontWeight(.medium)
+                    .foregroundColor(.primary)
+                
+                Spacer()
+            }
+            
+            Text(value)
+                .font(.caption)
+                .foregroundColor(.secondary)
+                .multilineTextAlignment(.leading)
+        }
+        .padding(.vertical, 12)
+        .padding(.horizontal, 16)
+        .background(Color(NSColor.controlBackgroundColor))
     }
 }
