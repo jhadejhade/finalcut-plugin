@@ -57,6 +57,7 @@ It maintains a clear separation of concerns by defining distinct models for:
 - [ ] Include pricing in the UI and support purchasing  
 - [ ] Improve accessibility (labels, traits, dynamic type support, VoiceOver)  
 - [ ] Add unit tests for business logic and data layer
+- [ ] Add a minimum width for the list and detail view
 - [ ] Add real image from url
 ---
 
