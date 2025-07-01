@@ -13,6 +13,13 @@ It maintains a clear separation of concerns by defining distinct models for:
 - UI representation  
 - Core Data storage
 
+## Features
+ - Install/Uninstall persist even if you closed the app
+ - Add pagination (upto page 2) - plugins-page-1.json and plugins-page-2.json
+ - Add single page syncing (version updates) - see plugins-sync.json
+ - Detail View with provision for images
+ - Re-usable views
+
 ---
 
 ## 💻 Tech Stack
@@ -43,14 +50,17 @@ It maintains a clear separation of concerns by defining distinct models for:
 - [ ] Include pricing in the UI and support purchasing  
 - [ ] Improve accessibility (labels, traits, dynamic type support, VoiceOver)  
 - [ ] Add unit tests for business logic and data layer
-
+- [ ] Add real image from url
 ---
+
+## Notes:
+- Image URLs not are real resulting in infinite loading state.
 
 ---
 
 ## 📸 Screenshots / Recordings
 
-> _(Add screenshots here if applicable)_
+![final-cut](https://github.com/user-attachments/assets/3c83a392-31ed-4352-b998-ad3496b9990b)
 
 ---
 
