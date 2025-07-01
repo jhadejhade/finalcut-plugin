@@ -24,6 +24,7 @@ It maintains a clear separation of concerns by defining distinct models for:
 
 ## 📸 Screenshots / Recordings
 
+![image](https://github.com/user-attachments/assets/04e4ed92-b3e6-47c6-989f-bf6c074ebfe6)
 ![final-cut](https://github.com/user-attachments/assets/3c83a392-31ed-4352-b998-ad3496b9990b)
 
 ---
