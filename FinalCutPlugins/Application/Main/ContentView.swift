@@ -20,6 +20,7 @@ struct ContentView<T: MainViewViewModelProtocol>: View {
                 ForEach(viewModel.plugins) { plugin in
                     NavigationLink(destination: PluginDetailView(plugin: plugin, viewModel: viewModel)) {
                         PluginCardView(plugin: plugin, viewModel: viewModel)
+                            .frame(minWidth: 300)
                             .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
                             .listRowSeparator(.hidden)
                     }
@@ -32,6 +33,7 @@ struct ContentView<T: MainViewViewModelProtocol>: View {
                 }
                 .loadingMore(viewModel.isLoadingMore)
             }
+            .frame(minWidth: 400)
             .listStyle(PlainListStyle())
             .navigationTitle("Final Cut Plugins")
             .toolbar {
