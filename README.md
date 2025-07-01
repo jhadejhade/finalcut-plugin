@@ -22,6 +22,12 @@ It maintains a clear separation of concerns by defining distinct models for:
 
 ---
 
+## 📸 Screenshots / Recordings
+
+![final-cut](https://github.com/user-attachments/assets/3c83a392-31ed-4352-b998-ad3496b9990b)
+
+---
+
 ## 💻 Tech Stack
 
 - `SwiftUI`  
@@ -56,14 +62,4 @@ It maintains a clear separation of concerns by defining distinct models for:
 ## Notes:
 - Image URLs not are real resulting in infinite loading state.
 
----
 
-## 📸 Screenshots / Recordings
-
-![final-cut](https://github.com/user-attachments/assets/3c83a392-31ed-4352-b998-ad3496b9990b)
-
----
-
-## 📄 License
-
-MIT License. See [LICENSE](./LICENSE) for details.
